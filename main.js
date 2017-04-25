@@ -1,35 +1,44 @@
-var morseAlphabet = [
-  {letter: "a", val: '.-'},
-  {letter: "b", val: '-...'},
-  {letter: "c", val: '-.-.'},
-  {letter: "d", val: '-..'},
-  {letter: "e", val: '.'},
-  {letter: "f", val: '..-.'},
-  {letter: "g", val: '--.'},
-  {letter: "h", val: '....'},
-  {letter: "i", val: '..'},
-  {letter: "j", val: '.---'},
-  {letter: "k", val: '-.-'},
-  {letter: "l", val: '.-..'},
-  {letter: "m", val: '--'},
-  {letter: "n", val: '-.'},
-  {letter: "o", val: '---'},
-  {letter: "p", val: '.--.'},
-  {letter: "q", val: '--.-'},
-  {letter: "r", val: '.-.'},
-  {letter: "s", val: '...'},
-  {letter: "t", val: '-'},
-  {letter: "u", val: '..-'},
-  {letter: "v", val: '...-'},
-  {letter: "w", val: '.--'},
-  {letter: "x", val: '-..-'},
-  {letter: "y", val: '-.--'},
-  {letter: "z", val: '--..'}
-];
-$().ready(function(){
-    console.warn("Eureka!!");
-});
+// http://www.olympiad.org.uk/programs/morse-code/bio04q3.c
+var morseAlphabet = {
+  'a': '.-',
+  'b': '-...',
+  'c': '-.-.',
+  'd': '-..',
+  'e': '.',
+  'f': '..-.',
+  'g': '--.',
+  'h': '....',
+  'i': '..',
+  'j': '.---',
+  'k': '-.-',
+  'l': '.-..',
+  'm': '--',
+  'n': '-.',
+  'o': '---',
+  'p': '.--.',
+  'q': '--.-',
+  'r': '.-.',
+  's': '...',
+  't': '-',
+  'u': '..-',
+  'v': '...-',
+  'w': '.--',
+  'x': '-..-',
+  'y': '-.--',
+  'z': '--..'
+};
 
-$('#calculate').on('click', function() {
-  console.log("Begins calculation");
-});
+var initial = "dog";
+
+function morse_analysis(message) {
+  console.log("Begins analisis");
+  var sizeMessage = message.length;
+  var charMessage = message.split("");
+  var codedMessage = charMessage.reduce(function(acc,char){
+    acc.msg += morseAlphabet[char];
+    return acc;
+  },{msg:""});
+  console.log(codeMessage);
+}
+
+morse_analysis(initial);
